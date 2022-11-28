@@ -20,9 +20,9 @@ Docker build
  $ docker build -t quarkus-calculator .
  ```
 
-Docker run with specific environment (dev/prod)
+Docker run 
  ```
- $ docker run  -p 8080:8080 quarkus-calculator
+ $ docker run  -p 8080:8080 -e DB_USER=admin -e DB_PASSWORD=password -e DB_URL=jdbc:mysql://localhost:3306/db_calculator quarkus-calculator
  ```
 
 Database

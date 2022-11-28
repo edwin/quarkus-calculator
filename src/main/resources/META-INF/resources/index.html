@@ -80,12 +80,6 @@
                         <input type="text" class="form-control" id="result" placeholder="0">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="result" class="col-sm-2 col-form-label">Trace Id : </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="traceId" placeholder="0" readonly>
-                    </div>
-                </div>
             </form>
         </div>
 
@@ -141,7 +135,6 @@
 
             $.get('/api/calculate?value1='+value1+'&value2='+value2+'&method='+method+'', function(response) {
                 $('#result').val(response.result);
-                $('#traceId').val(response.traceId);
                 reloadTable();
             });
         });
