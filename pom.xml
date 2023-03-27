@@ -62,9 +62,13 @@
         </dependency>
 
         <!-- JDBC driver dependencies -->
+<!--        <dependency>-->
+<!--            <groupId>io.quarkus</groupId>-->
+<!--            <artifactId>quarkus-jdbc-mysql</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-mysql</artifactId>
+            <artifactId>quarkus-jdbc-h2</artifactId>
         </dependency>
 
         <!-- test cases -->
