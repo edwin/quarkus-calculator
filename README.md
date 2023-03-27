@@ -1,6 +1,6 @@
 # About this Repo
 
-A front end app created with HTML, JQuery and Quarkus as Backend. It display a basic functionality for a simple calculator with database connectivity for history.
+A front end app created with HTML, JQuery and Quarkus as Backend. It display a basic functionality for a simple calculator with database connectivity for history. It use H2 database for storing calculator history.
 
 How To
 ------------
@@ -22,23 +22,8 @@ Docker build
 
 Docker run 
  ```
- $ docker run  -p 8080:8080 -e DB_USER=admin -e DB_PASSWORD=password -e DB_URL=jdbc:mysql://localhost:3306/db_calculator quarkus-calculator
+ $ docker run  -p 8080:8080 quarkus-calculator
  ```
-
-Database
------------
-```sql
-create table t_calculator
-(
-	id int auto_increment,
-	value1 bigint null,
-	method varchar(20) null,
-	value2 bigint null,
-	total bigint null,
-	constraint t_calculator_pk
-		primary key (id)
-);
-```
 
 Libraries
 ------------
