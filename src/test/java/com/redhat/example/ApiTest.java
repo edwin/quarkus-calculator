@@ -1,10 +1,11 @@
 package com.redhat.example;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -17,12 +18,22 @@ import static org.hamcrest.Matchers.equalTo;
  * @author Muhammad Edwin < edwin at redhat dot com >
  * 28 Mar 2023 10:07
  */
+
+@Epic("Calculator API Tests")
+@Feature("Validate whether all the Calculator APIs are working well")
+
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ApiTest {
 
     @Test
     @Order(1)
+    @Story("Testing the calculator's subtract API")
+    @Description("Given Calculator is asked to do addition of 5 and 3  <br />"+
+            "When calculate API is being hit with that values  <br />"+
+            "Then API will return 8"
+    )
+    @DisplayName("This test is to check if submitting addition API with two values will work as expected")
     public void testCalculateAddition() {
         given()
                 .log().all()
@@ -35,6 +46,12 @@ public class ApiTest {
 
     @Test
     @Order(2)
+    @Story("Testing the calculator's subtract API ")
+    @Description("Given Calculator is asked to do subtract of 5 and 3 <br />"+
+            "When calculate API is being hit with that values <br />"+
+            "Then API will return 2"
+    )
+    @DisplayName("This test is to check if submitting subtract API with two values will work as expected")
     public void testCalculateSubtraction() {
         given()
                 .log().all()
@@ -47,6 +64,12 @@ public class ApiTest {
 
     @Test
     @Order(3)
+    @Story("Testing the calculator's multiplication API  ")
+    @Description("Given Calculator is asked to do multiply of 2 and 3 <br />"+
+            "When calculate API is being hit with that values <br />"+
+            "Then API will return 6"
+    )
+    @DisplayName("This test is to check if submitting multiplication API with two values will work as expected")
     public void testCalculateMultiplication() {
         given()
                 .log().all()
@@ -59,6 +82,12 @@ public class ApiTest {
 
     @Test
     @Order(4)
+    @Story("Testing the calculator's division API  ")
+    @Description("Given Calculator is asked to do division of 4 and 2 <br />"+
+            "When calculate API is being hit with that values <br />"+
+            "Then API will return 2"
+    )
+    @DisplayName("This test is to check if submitting division API with two values will work as expected")
     public void testCalculateDivision() {
         given()
                 .log().all()
@@ -72,6 +101,12 @@ public class ApiTest {
 
     @Test
     @Order(5)
+    @Story("Testing the calculator's result history API  ")
+    @Description("Given Calculator API is hit 4 times <br />"+
+            "When Result API is being hit <br />"+
+            "Then API will return 4 transactions, with a correct detail for each API transactions"
+    )
+    @DisplayName("This test is to check if submitting division API with two values will work as expected")
     public void testGetAll() {
         given()
                 .log().all()
